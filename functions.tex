@@ -1,0 +1,54 @@
+% adjust the page margins
+\usepackage[scale=0.87]{geometry}
+\setlength{\hintscolumnwidth}{2.5cm}          % Left col width
+%\setlength{\makecvtitlenamewidth}{10cm}
+
+% Vertical spacing
+\newcommand{\tightsection}[1]{%
+    \vspace*{-3.5mm}
+    \section{#1}
+    \vspace*{-1.5mm}
+}
+
+% Header design
+% Style 1
+%\moderncvhead[\moderncvstyleheadoptions]{1}
+%\renewcommand*{\namefont}{\fontsize{28}{27}\mdseries\upshape}
+
+% Style 3
+\moderncvhead[\moderncvstyleheadoptions]{3}
+\renewcommand*{\namefont}{\fontsize{25}{24}\mdseries\upshape}
+\renewcommand*{\titlefont}{\fontsize{16}{18}\mdseries\upshape}
+
+% datetime format
+\usepackage{datetime}
+\newcommand{\yearabove}[2]{\parbox[t]{10mm}{\centering{#2\par\vspace{-2mm} \tiny{#1}}}}
+\def\dates[#1.#2-#3.#4]{\yearabove{\monthname[#1]}{#2}--\yearabove{\monthname[#3]}{#4}}
+
+% Skill level
+\colorlet{fullcolor}{red}
+\colorlet{emptcolor}{gray}
+\newcount\skillcnt
+\newcommand\skill[1]{
+    \skillcnt=0
+    \loop\ifnum\skillcnt<#1
+        \advance\skillcnt1
+        \textcolor{fullcolor}{$\bullet$}
+    \repeat
+    \loop\ifnum\skillcnt<5
+        \advance\skillcnt1
+        \textcolor{emptcolor}{$\bullet$}
+    \repeat
+}
+\newcommand\skillname[2]{
+    \hbox{
+        \makebox[2cm][l]{#1}
+        \skill{#2}
+    }
+}
+
+% Repo links
+\newcommand{\bluelink}[1]{{\color{blue}\url{#1}}}
+\newcommand{\github}[2]{\bluelink{github.com/#1/#2}}
+\newcommand{\benkos}[1]{\github{BenKosSoft}{#1}}
+\newcommand{\selfrepo}[1]{\github{mbenlioglu}{#1}}
