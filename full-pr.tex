@@ -1,0 +1,154 @@
+%-------------------------------------------------------------------------------
+% Packages and config
+%-------------------------------------------------------------------------------
+\documentclass[11pt,letterpaper,sans]{moderncv}
+
+% moderncv themes
+\moderncvstyle[right]{classic}
+\moderncvcolor{blue}
+
+% character encoding
+\usepackage[utf8]{inputenc}
+
+\input{functions.tex}
+
+%-------------------------------------------------------------------------------
+% personal data
+
+\name{Muhammed Mücahid}{Benlioğlu}
+\title{Curriculum Vitae}
+\address{1390 Northside Drive NW, Apt.1509}{Atlanta, GA, USA}{}
+\phone[mobile]{+1~(470)~305~8319}
+\email{m.mucahidbenlioglu@gmail.com}
+\social[linkedin]{mbenlioglu}
+\social[github]{mbenlioglu}
+\homepage{mucahidbenlioglu.com}
+
+\begin{document}
+\vspace*{-10mm}      % Adjust spacing
+\makecvtitle
+\vspace*{-10mm}     % Adjust spacing
+
+%-------------------------------------------------------------------------------
+% Education
+
+\tightsection{Education}
+\cventry{\yearabove{August}{2019}-- Now}{Georgia Institute of Technology}{PhD}
+    {Atlanta, GA, USA}{\small{\textit{\textbf{Computational Science and Engineering}}}}{
+        \begin{itemize}
+            \item Advisor: Prof. Dr. Ümit Çatalyürek. Research Area: \textit{High
+            Performance Computing}
+        \end{itemize}
+    }
+\cventry{\dates[09.2013-06.2018]}{Sabanci University}{Bachelor of Science}
+    {Istanbul, Turkey}{\textit{\textbf{Computer Science and Engineering}}}{
+        \begin{itemize}
+            \item With Sakip Sabanci High Success Scholarship. GPA: 3.83/4.0,
+            PGPA: 3.87/4.0
+        \end{itemize}}
+%-------------------------------------------------------------------------------
+% Experience
+
+\tightsection{Work Experience}
+\cventry{\dates[06.2017-09.2017]}{Proente}{Software Engineer}{Istanbul, Turkey}
+    {\bluelink{proente.com/en}}{
+        \begin{itemize}
+        \item Full stack development and deployment of the data analytics and visualization
+        software, Prowmes.
+        \item Supervised by Erçin Temel, Sertaç Karahoda
+        \end{itemize}
+    }
+\cventry{\dates[06.2016-09.2016]}{SemperTech}{Internship, Software Engineer}{Istanbul, Turkey}
+    {\bluelink{semper-tech.com/en}}{
+        \begin{itemize}
+        \item Designed and developed full-stack mobile applications having RESTful
+        web service, push notifications, data analysis and graphical visualization.
+        Supervised by Prof. Dr. Şahin Albayrak and Dr. Emre Kaplan.
+        \end{itemize}
+    }
+
+\tightsection{Teaching Experience}
+\cventry{\dates[02.2018-05.2018]}{CS Essentials Workshop Series}{Sabanci University}
+    {Istanbul, Turkey}{}{
+        \begin{itemize}
+        \item \textit{Co-designed} and \textit{instructed} a series of workshops covering
+        fundamental CS practices and tools such as Linux (terminal) usage, git version
+        control, NoSQL/Graph databases and Python.
+        \item Material created: {\color{blue} \url{github.com/CSEssentialsWorkshops}}
+        \end{itemize}
+    }
+\cventry{\dates[09.2016-05.2017]}{Undergraduate Teaching Assistant}{Sabanci University}
+    {Istanbul, Turkey}{}{
+        \begin{itemize}
+        \item \fontsize{9.5}{7}\selectfont{Prepared homework/project documents and solutions, supervised students.
+        Supervised by Prof. Dr. Yücel Saygın}
+        \end{itemize}
+    }
+
+%-------------------------------------------------------------------------------
+% Publications
+
+%%\renewcommand{\refname}{Articles}     % Change name to 'Articles'
+%\nocite{*}
+%\bibliographystyle{plain}
+%\bibliography{publications}
+
+%-------------------------------------------------------------------------------
+% Selected Projects
+
+\tightsection{Selected Projects}
+\cventry{\dates[09.2017-02.2018]}{Crycur}{Sabanci University}{Istanbul, Turkey}{}{
+    \begin{itemize}
+        \item Designed and implemented a CLI tool that has needed cryptographic functions
+        for a simulated cryptocurrency.
+        \item Further information and source code: \benkos{crycur}
+        \item Worked as a team of 2 students. Supervised by Prof. Dr. Erkay Savaş.
+    \end{itemize}}
+\cventry{\dates[09.2016-09.2017]}{Differential Privacy Framework for Movie Recommendation System}
+    {\small{Sabanci University}}{\small{Istanbul}}{}{
+        \begin{itemize}
+            \item Researched and implemented a movie recommendation system using
+            differential privacy methods.
+            \item Further information and source code: \benkos{pymovielens}
+            \item Worked as a team of 2 students. Supervised by Prof. Dr. Yücel Saygın
+        \end{itemize}
+    }
+
+%-------------------------------------------------------------------------------
+% Voluntary
+
+\tightsection{Voluntary Works}
+\cventry{2014--2015}{Civic Involvement Projects}{Sabanci University}{Istanbul, Turkey}{}{
+    \begin{itemize}
+        \item Visited and made activities with elderly people in two different
+        retirement homes in Istanbul.
+    \end{itemize}}
+
+%-------------------------------------------------------------------------------
+% Skills & Hobbies etc.
+
+\tightsection{Computer \& Software Skills}
+\cvlistdoubleitem{C/C++, Python, Java~~~~~~~\skill{5}}{Git, Linux, Docker, MySQL~\skill{5}}
+\cvlistdoubleitem{Android, Neo4j, JS, HTML~\skill{4}}{C\#, PHP~~~~~~~~~~~~~~~~~~~~~~~\skill{2}}
+%\begin{cvcolumns}
+%    \cvcolumn{}{C/C++}
+%\end{cvcolumns}
+
+\tightsection{Personal Skills}
+\cvitem{Languages}{Turkish(Native), English(Advanced)}
+\cvitem{Hobies}{Archery, Chess, Tabletop games}
+
+%-------------------------------------------------------------------------------
+% References
+
+\tightsection{References}
+%\cvitem{\small\textbf{Prof. Dr. Ümit Çatalyürek}}{}
+\cvitem{\small\textbf{Prof. Dr. Yücel Saygın}}{Faculty Member, Computer Science and Engineering,
+    Sabanci University
+    \begin{itemize}
+        \item \textbf{Email:} \href{mailto:ysaygin@sabanciuniv.edu}{ysaygin@sabanciuniv.edu} --
+        \textbf{Phone:} +90 (216) 483 9576
+    \end{itemize}}
+
+\clearpage
+\end{document}
