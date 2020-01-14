@@ -12,14 +12,16 @@ include(cmake/UseLATEX.cmake)
 # Outputs
 add_latex_document(full-pr.tex
             TARGET_NAME full-prof
-            )
-set_target_properties(full-prof
-            PROPERTIES
-            OUTPUT_NAME "M.MucahidBenlioglu_CV.pdf"
+            INPUTS functions.tex
+#            BIBFILES publications.bib
             )
 #add_latex_document(full-ac.tex
 #            TARGET_NAME full-ac
+#            INPUTS functions.tex
+#            BIBFILES publications.bib
 #            )
 #add_latex_document(resume.tex
 #            TARGET_NAME resume
+#            INPUTS functions.tex
+#            BIBFILES publications.bib
 #            )
