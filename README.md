@@ -17,8 +17,10 @@ tex file provided by `moderncv` maintainers.
 - [LaTeX](https://www.latex-project.org/get/)
 - [moderncv](https://ctan.org/pkg/moderncv)
 	
+```
 	# Can be installed with the following command
 	$ tlmgr install moderncv
+```
 
 For building the project simply execute the following commands.
 	
