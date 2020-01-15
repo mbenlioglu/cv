@@ -13,9 +13,9 @@ tex file provided by `moderncv` maintainers.
 ## Building
 #### Prerequisites:
 
--[CMake](https://cmake.org/) (> v3.10)
--[LaTeX](https://www.latex-project.org/get/)
--[moderncv](https://ctan.org/pkg/moderncv)
+- [CMake](https://cmake.org/) (> v3.10)
+- [LaTeX](https://www.latex-project.org/get/)
+- [moderncv](https://ctan.org/pkg/moderncv)
 	
 	# Can be installed with the following command
 	$ tlmgr install moderncv
