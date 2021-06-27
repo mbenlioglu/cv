@@ -2,7 +2,7 @@
 
 This repository is my personal CV/resume designed in LaTeX using definitions provided under
 [moderncv](https://ctan.org/pkg/moderncv) package. For a full example of all functions provided by
-`moderncv` you can check [this](http://mirrors.ctan.org/macros/latex/contrib/moderncv/template.tex)
+`moderncv` you can check [this](https://raw.githubusercontent.com/moderncv/moderncv/master/template.tex)
 tex file provided by `moderncv` maintainers.
 
 
