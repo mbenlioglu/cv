@@ -1,13 +1,20 @@
 # Created by mbenlioglu
+cmake_minimum_required(VERSION 3.14)
+
+# Add UseLATEX v2.7.2
+include(FetchContent)
+FetchContent_Declare(
+    UseLATEX
+    URL https://gitlab.kitware.com/kmorel/UseLATEX/-/raw/Version2.7.2/UseLATEX.cmake
+    DOWNLOAD_NO_EXTRACT TRUE
+)
+FetchContent_MakeAvailable(UseLATEX)
+include(${uselatex_SOURCE_DIR}/UseLATEX.cmake)
 
 # Project setup
-
 project(CV-resume NONE)
-cmake_minimum_required(VERSION 3.10)
 
 set(PDFLATEX_COMPILER pdflatex)
-
-include(cmake/UseLATEX.cmake)
 
 # Outputs
 add_latex_document(full-pr.tex
