@@ -13,7 +13,7 @@ tex file provided by `moderncv` maintainers.
 ## Building
 #### Prerequisites:
 
-- [CMake](https://cmake.org/) (> v3.10)
+- [CMake](https://cmake.org/) (> v3.14)
 - [LaTeX](https://www.latex-project.org/get/)
 - [moderncv](https://ctan.org/pkg/moderncv)
 	
