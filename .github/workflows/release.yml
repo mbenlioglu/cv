@@ -1,0 +1,78 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write   # needed to create the release and upload assets
+
+env:
+  # Parallel lists, one name per line: line N of BUILT_PDFS maps to line N of ASSET_NAMES.
+  # Add a line to each when new targets/outputs are introduced.
+  BUILT_PDFS: |
+    full-pr.pdf
+  ASSET_NAMES: |
+    M.MucahidBenlioglu_CV.pdf
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Install LaTeX and build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            cmake make \
+            texlive-latex-base texlive-latex-recommended texlive-latex-extra \
+            texlive-fonts-recommended texlive-fonts-extra \
+            texlive-bibtex-extra biber latexmk lmodern
+
+      - name: Configure
+        run: cmake -S . -B build
+
+      - name: Build all targets
+        run: cmake --build build --target all
+
+      - name: Rename PDFs to release asset names
+        run: |
+          mapfile -t built  < <(printf '%s\n' "$BUILT_PDFS"  | sed '/^[[:space:]]*$/d')
+          mapfile -t assets < <(printf '%s\n' "$ASSET_NAMES" | sed '/^[[:space:]]*$/d')
+
+          if [ "${#built[@]}" -ne "${#assets[@]}" ]; then
+            echo "::error::BUILT_PDFS (${#built[@]}) and ASSET_NAMES (${#assets[@]}) must have the same number of entries"
+            exit 1
+          fi
+
+          mkdir -p dist
+          missing=0
+
+          for i in "${!built[@]}"; do
+            if [ -f "build/${built[$i]}" ]; then
+              cp "build/${built[$i]}" "dist/${assets[$i]}"
+              echo "OK: build/${built[$i]} -> dist/${assets[$i]}"
+            else
+              echo "::error::Expected build/${built[$i]} not found"
+              missing=1
+            fi
+          done
+
+          if [ "$missing" -ne 0 ]; then
+            echo "Build output:"
+            ls -la build
+            exit 1
+          fi
+
+          echo "Release assets:"
+          ls -la dist
+
+      - name: Create release and attach PDFs
+        uses: softprops/action-gh-release@v3
+        with:
+          files: dist/*
+          fail_on_unmatched_files: true
+          generate_release_notes: true
